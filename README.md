@@ -7,9 +7,9 @@ Master Thesis Topic: Assessing Land Cover Changes and Rice Cultivation Suitabili
 The study monitor the spatial and temporal dynamics of urban expansion and its impacts on rice-growing areas in the Red River Delta in Vietnam from 1986 to 2024 and assesses the suitability of the region for rice cultivation.
 
 ## Main objectives:
--	Map and analyze urban and rice land cover changes over 38 years using remote sensing imagery.
-  • Generate a rice cultivation suitability map using multi-criteria decision analysis (MCDA).
-  •	Assessing land cover changes on rice suitability across the broader of the study area.
+1. Map and analyze urban and rice land cover changes over 38 years using remote sensing imagery.
+2. Generate a rice cultivation suitability map using multi-criteria decision analysis (MCDA).
+3. Assessing land cover changes on rice suitability across the broader of the study area.
 
 ## Key Findings
 
@@ -36,19 +36,14 @@ Change detection: Post-Classification Comparison (PCC); accuracy assessed follow
 - **Change detection:** Post-Classification Comparison (PCC); accuracy assessed following Olofsson et al. (2014)
 
 ### Phase 2 — Rice Cultivation Suitability
+- **Criteria (7):** Soil texture, soil pH, minimum temperature, elevation, slope, distance to rivers/streams, precipitation
+- **Weighting:** Analytic Hierarchy Process (AHP) — distance to rivers ranked highest (36% weight)
+- **Output:** Normalized Suitability Index mapped to 4 levels (high / moderate / low / not suitable)
 
-Criteria: Soil texture, soil pH, minimum temperature, elevation, slope, distance to rivers/streams, precipitation
-Weighting: Analytic Hierarchy Process (AHP)
-Output: Normalized Suitability Index mapped to 4 levels (high / moderate / low / not suitable)
-
-### Phase 3 — Land cover change within rice suitability assessment
-
-Approach: Pixel-level cross-overlay of urban and rice change maps with the rice suitability zones across all time intervals (1990–2024)
-Land cover classes: Urban, rice, and others (aquaculture, water bodies, forests, bare soil, other crops)
-Suitability zones: High suitable, moderate suitable, low suitable, not suitable
-Output:
-  • Urban expansion occurred predominantly in high and moderate suitable zones. In Hanoi, ~22,500 ha (high) and ~52,100 ha (moderate) were converted to urban
-  • Land transitions in low suitable and not suitable zones were minimal throughout the study period
+### Phase 3 — Land Cover Change within Rice Suitability Assessment
+- **Approach:** Pixel-level cross-overlay of urban and rice change maps with the rice suitability zones across all time intervals (1990–2024)
+- **Land cover classes:** Urban, rice, and others (aquaculture, water bodies, forests, bare soil, other crops)
+- **Suitability zones:** High suitable, moderate suitable, low suitable, not suitable
 
 ## Tools & Data Sources
 
