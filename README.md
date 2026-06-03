@@ -13,9 +13,9 @@ The study monitor the spatial and temporal dynamics of urban expansion and its i
 
 ## Key Findings
 
-• Urban areas expanded steadily across all 11 provinces, with Hanoi showing the largest growth (~76,000 ha gained).
-• Rice loss accelerated in recent years, exceeding 90,000 ha in 2024, driven by urbanization, crop conversion and field abandonment.
-• 65.4% of the Red River Delta is classified as high or moderate suitable for rice cultivation.
+- Urban areas expanded steadily across all 11 provinces, with Hanoi showing the largest growth (~76,000 ha gained).
+- Rice loss accelerated in recent years, exceeding 90,000 ha in 2024, driven by urbanization, crop conversion and field abandonment.
+- 65.4% of the Red River Delta is classified as high or moderate suitable for rice cultivation.
 
 
 ## Methodology
