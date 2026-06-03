@@ -33,7 +33,7 @@ Criteria: Soil texture, soil pH, minimum temperature, elevation, slope, distance
 Weighting: Analytic Hierarchy Process (AHP)
 Output: Normalized Suitability Index mapped to 4 levels (high / moderate / low / not suitable)
 
-# Phase 3 — Land cover change within rice suitability assessment
+### Phase 3 — Land cover change within rice suitability assessment
 
 Approach: Pixel-level cross-overlay of urban and rice change maps with the rice suitability zones across all time intervals (1990–2024)
 Land cover classes: Urban, rice, and others (aquaculture, water bodies, forests, bare soil, other crops)
