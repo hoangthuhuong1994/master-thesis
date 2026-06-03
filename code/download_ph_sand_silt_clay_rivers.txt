@@ -143,17 +143,3 @@ Export.image.toDrive({
   maxPixels: 1e8
 });
 
-
-
-
-##########################################
-# Downloading rivers and streams from https://overpass-turbo.eu/
-##########################################
-
-[out:json];
-(
-  way["waterway"="river"](19.5, 104.5, 22, 108.5);
-  way["waterway"="stream"](19.5, 104.5, 22, 108.5);
-);
-out body geom;
-
