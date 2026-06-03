@@ -48,7 +48,7 @@ Output:
 |---|---|
 | [FORCE](https://force-eo.readthedocs.io/) | Landsat preprocessing & STM generation & Classification |
 | QGIS 3.40.5 | Raster analysis, suitability mapping |
-| Python, R | accuracy assessment, pixel-level raster overlay, transition tracking)|
+| Python, R | Accuracy assessment & Pixel-level raster overlay & Transition tracking|
 | Landsat Archive (USGS) | Earth observation imagery |
 | Copernicus ERA5-Land | Temperature & precipitation |
 | Copernicus GLO-30 DEM | Elevation & slope |
