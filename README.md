@@ -7,7 +7,7 @@ Master Thesis Topic: Assessing Land Cover Changes and Rice Cultivation Suitabili
 The study monitor the spatial and temporal dynamics of urban expansion and its impacts on rice-growing areas in the Red River Delta in Vietnam from 1986 to 2024 and assesses the suitability of the region for rice cultivation.
 
 ## Main objectives:
-  •	Map and analyze urban and rice land cover changes over 38 years using remote sensing imagery.
+-	Map and analyze urban and rice land cover changes over 38 years using remote sensing imagery.
   • Generate a rice cultivation suitability map using multi-criteria decision analysis (MCDA).
   •	Assessing land cover changes on rice suitability across the broader of the study area.
 
@@ -26,6 +26,14 @@ Preprocessing: FORCE framework — atmospheric correction, cloud masking, data c
 Features: Spectral Temporal Metrics (STMs) over 5-year intervals; spectral bands + indices (EVI, NDBI, SAVI, NDWI)
 Classification: Random Forest (RF) with 800 training points across 8 land cover classes
 Change detection: Post-Classification Comparison (PCC); accuracy assessed following Olofsson et al. (2014)
+
+
+### Phase 1 — Land Cover Change Analysis
+- **Data:** Landsat 4/5/7/8/9 imagery (3,561 scenes, 30 m resolution)
+- **Preprocessing:** FORCE framework — atmospheric correction, cloud masking, data cubing
+- **Features:** Spectral Temporal Metrics (STMs) over 5-year intervals; spectral bands + indices (EVI, NDBI, SAVI, NDWI)
+- **Classification:** Random Forest (RF) with 800 training points across 8 land cover classes
+- **Change detection:** Post-Classification Comparison (PCC); accuracy assessed following Olofsson et al. (2014)
 
 ### Phase 2 — Rice Cultivation Suitability
 
