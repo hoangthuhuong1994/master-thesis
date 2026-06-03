@@ -73,5 +73,6 @@ Change detection: Post-Classification Comparison (PCC); accuracy assessed follow
 │   ├── urban_rice_assessment.py    # Urban–rice cross-analysis
 │   └── land_change_vs_suitability_assessment.py  # Land cover × suitability level analysis
 ├── results/                        # Output maps and accuracy tables
+├── summary_thesis.pdf                        
 └── README.md
 ```
