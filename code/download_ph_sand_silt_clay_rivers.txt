@@ -1,1 +1,159 @@
+Downloading sand, silt, clay, soil pH and rivers data code
+##########################################
+# Downloading Sand data from Google Earth Engine (GEE)
+##########################################
+
+// Define the region of interest (ROI)
+// Example: Define a bounding box [min_lon, min_lat, max_lon, max_lat]
+var roi = ee.Geometry.Rectangle([104.5, 19.5, 108.5, 22]);
+
+// Load SoilGrids Sand content image (mean values)
+var sand_image = ee.Image("projects/soilgrids-isric/sand_mean");
+
+// Select the bands for sand at different depths
+var sand_0_5cm = sand_image.select("sand_0-5cm_mean").clip(roi);
+var sand_5_15cm = sand_image.select("sand_5-15cm_mean").clip(roi);
+
+// Depth-weighted average for 0-15 cm
+var sand_weighted = sand_0_5cm.multiply(5).add(sand_5_15cm.multiply(10)).divide(15);
+
+// Visualize the sand content at different depths and the weighted average
+Map.centerObject(roi, 7);
+Map.addLayer(sand_weighted, {min: 0, max: 100, palette: ['yellow', 'red']}, 'Sand 0-15 cm Weighted');
+
+// Export the sand content for each depth and the weighted average as GeoTIFF
+Export.image.toDrive({
+  image: sand_weighted,
+  description: 'sand_0_15cm_weighted',
+  folder: 'EarthEngine',
+  fileNamePrefix: 'sand_0_15cm_weighted',
+  region: roi,
+  scale: 250,
+  crs: 'EPSG:4326',
+  maxPixels: 1e8
+});
+
+
+##########################################
+# Downloading Silt data from Google Earth Engine (GEE)
+##########################################
+
+// Define the region of interest (ROI)
+// Example: Define a bounding box [min_lon, min_lat, max_lon, max_lat]
+var roi = ee.Geometry.Rectangle([104.5, 19.5, 108.5, 22]);
+
+// Load SoilGrids Silt content image (mean values)
+var silt_image = ee.Image("projects/soilgrids-isric/silt_mean");
+
+// Select the bands for silt at different depths
+var silt_0_5cm = silt_image.select("silt_0-5cm_mean").clip(roi);
+var silt_5_15cm = silt_image.select("silt_5-15cm_mean").clip(roi);
+
+// Depth-weighted average for 0-15 cm for silt
+var silt_weighted = silt_0_5cm.multiply(5).add(silt_5_15cm.multiply(10)).divide(15);
+
+// Visualize the silt content at different depths and the weighted average
+Map.centerObject(roi, 7);
+Map.addLayer(silt_weighted, {min: 0, max: 100, palette: ['green', 'blue']}, 'Silt 0-15 cm Weighted');
+
+// Export the silt content for each depth and the weighted average as GeoTIFF
+Export.image.toDrive({
+  image: silt_weighted,
+  description: 'silt_0_15cm_weighted',
+  folder: 'EarthEngine',
+  fileNamePrefix: 'silt_0_15cm_weighted',
+  region: roi,
+  scale: 250,
+  crs: 'EPSG:4326',
+  maxPixels: 1e8
+});
+
+
+
+
+
+##########################################
+# Downloading Clay data from Google Earth Engine (GEE)
+##########################################
+
+// Define the region of interest (ROI)
+// Example: Define a bounding box [min_lon, min_lat, max_lon, max_lat]
+var roi = ee.Geometry.Rectangle([104.5, 19.5, 108.5, 22]);
+
+// Load SoilGrids Clay content image (mean values)
+var clay_image = ee.Image("projects/soilgrids-isric/clay_mean");
+
+// Select the bands for clay at different depths
+var clay_0_5cm = clay_image.select("clay_0-5cm_mean").clip(roi);
+var clay_5_15cm = clay_image.select("clay_5-15cm_mean").clip(roi);
+
+// Depth-weighted average for 0-15 cm for clay
+var clay_weighted = clay_0_5cm.multiply(5).add(clay_5_15cm.multiply(10)).divide(15);
+
+// Visualize the clay content at different depths and the weighted average
+Map.centerObject(roi, 7);  // Center the map on the region of interest with zoom level 7
+Map.addLayer(clay_weighted, {min: 0, max: 100, palette: ['green', 'brown']}, 'Clay 0-15 cm Weighted');
+
+// Export the clay content for each depth and the weighted average as GeoTIFF
+Export.image.toDrive({
+  image: clay_weighted,
+  description: 'clay_0_15cm_weighted',
+  folder: 'EarthEngine',
+  fileNamePrefix: 'clay_0_15cm_weighted',
+  region: roi,
+  scale: 250,
+  crs: 'EPSG:4326',
+  maxPixels: 1e8
+});
+
+
+
+
+##########################################
+# Downloading pH data from Google Earth Engine (GEE)
+##########################################
+
+// Define the region of interest (ROI)
+// Example: Define a bounding box [min_lon, min_lat, max_lon, max_lat]
+var roi = ee.Geometry.Rectangle([104.5, 19.5, 108.5, 22]);
+
+// Load SoilGrids pH content image (mean values)
+var ph_image = ee.Image("projects/soilgrids-isric/phh2o_mean");
+
+// Select the bands for pH at different depths
+var ph_0_5cm = ph_image.select("phh2o_0-5cm_mean").clip(roi);
+var ph_5_15cm = ph_image.select("phh2o_5-15cm_mean").clip(roi);
+
+// Depth-weighted average for 0-15 cm for pH
+var ph_weighted = ph_0_5cm.multiply(5).add(ph_5_15cm.multiply(10)).divide(15);
+
+// Visualize the pH content at different depths and the weighted average
+Map.centerObject(roi, 7);  // Center the map on the region of interest with zoom level 7
+Map.addLayer(ph_weighted, {min: 0, max: 14, palette: ['blue', 'green', 'yellow', 'red']}, 'pH 0-15 cm Weighted');
+
+// Export the pH content for each depth and the weighted average as GeoTIFF
+Export.image.toDrive({
+  image: ph_weighted,
+  description: 'ph_0_15cm_weighted',
+  folder: 'EarthEngine',
+  fileNamePrefix: 'ph_0_15cm_weighted',
+  region: roi,
+  scale: 250,
+  crs: 'EPSG:4326',
+  maxPixels: 1e8
+});
+
+
+
+
+##########################################
+# Downloading rivers and streams from https://overpass-turbo.eu/
+##########################################
+
+[out:json];
+(
+  way["waterway"="river"](19.5, 104.5, 22, 108.5);
+  way["waterway"="stream"](19.5, 104.5, 22, 108.5);
+);
+out body geom;
 
