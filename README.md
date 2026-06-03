@@ -1,7 +1,7 @@
 # master-thesis
 Master Thesis Topic: Assessing Land Cover Changes and Rice Cultivation Suitability in Vietnam’s Red River Delta
 
-**Author:** Thi Thu Huong Hoang | **Supervisors:** JProf. Dr. David Frantz, Dr. Achim Röder
+**Author:** Thi Thu Huong Hoang | **Supervisors:** JProf. Dr. David Frantz, Dr. Achim Röder | Trier University
 
 ## Overview
 The study monitor the spatial and temporal dynamics of urban expansion and its impacts on rice-growing areas in the Red River Delta in Vietnam from 1986 to 2024 and assesses the suitability of the region for rice cultivation.
