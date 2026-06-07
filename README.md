@@ -18,14 +18,6 @@ The study monitor the spatial and temporal dynamics of urban expansion and its i
 
 
 ## Methodology
-###  Phase 1 — Land Cover Change Analysis
-
-Data: Landsat 4/5/7/8/9 imagery (3,561 scenes, 30 m resolution)
-Preprocessing: FORCE framework — atmospheric correction, cloud masking, data cubing
-Features: Spectral Temporal Metrics (STMs) over 5-year intervals; spectral bands + indices (EVI, NDBI, SAVI, NDWI)
-Classification: Random Forest (RF) with 800 training points across 8 land cover classes
-Change detection: Post-Classification Comparison (PCC); accuracy assessed following Olofsson et al. (2014)
-
 
 ### Phase 1 — Land Cover Change Analysis
 - **Data:** Landsat 4/5/7/8/9 imagery (3,561 scenes, 30 m resolution)
